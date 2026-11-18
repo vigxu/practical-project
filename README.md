@@ -4,10 +4,10 @@ A simple personal portfolio website created using HTML, CSS and JavaScript.
 
 ## Student Details
 
-- **Full Name:** Your Full Name
-- **URN Number:** Your URN Number
-- **Semester:** Your Semester
-- **Section:** Your Section
+- **Full Name:** Vignesh Sudhir Kalbhor
+- **URN Number:** E25BO31505
+- **Semester:** 3rd
+- **Section:** B
 - **Subject:** Git and GitHub
 
 ## Project Files
