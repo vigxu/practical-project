@@ -3,54 +3,131 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <meta name="description" content="Portfolio of Vighnesh Kalbhor, B.Tech Computer Science student.">
+  <title>Vighnesh Kalbhor | Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero">
-    <nav class="navbar">
-      <a class="logo" href="#home">MyPortfolio</a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
 
-    <section id="home" class="intro">
-      <p class="tag">HELLO, I'M</p>
-      <h1>Your Name</h1>
-      <h2>College Student & Beginner Web Developer</h2>
-      <p>I enjoy learning new things and creating simple websites.</p>
-      <a class="button" href="#contact">Contact Me</a>
-    </section>
+  <!-- Scroll progress bar -->
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <!-- Navigation bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a class="brand" href="#home">Vighnesh Kalbhor</a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section id="about" class="section">
-      <h2>About Me</h2>
-      <p>I'm a college student interested in technology, web development and creative projects. This is my first portfolio website made using HTML, CSS and JavaScript.</p>
-    </section>
-
-    <section id="skills" class="section">
-      <h2>My Skills</h2>
-      <div class="skills">
-        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Communication</span>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <p class="intro intro-anim" style="--d: 0.1s">B.Tech Computer Science, 3rd Semester</p>
+      <h1 class="hero-title intro-anim" style="--d: 0.25s">Vighnesh Kalbhor</h1>
+      <p class="hero-sub intro-anim" style="--d: 0.45s">Building websites and software, one step at a time.</p>
+      <div class="hero-actions intro-anim" style="--d: 0.6s">
+        <a class="btn btn-primary" href="#contact">Contact me</a>
+        <a class="link" href="#projects">See my work &rsaquo;</a>
       </div>
     </section>
 
-    <section id="contact" class="section contact">
-      <h2>Contact Me</h2>
-      <p>Email: yourname@example.com</p>
-      <p>GitHub: github.com/yourusername</p>
-      <button id="helloButton" class="button">Say Hello</button>
-      <p id="message" aria-live="polite"></p>
+    <!-- About (dark) -->
+    <section class="section dark" id="about">
+      <div class="container">
+        <p class="statement" data-scroll-text>I am a B.Tech Computer Science student. I enjoy programming, and I am learning web development, databases and software engineering. I build small projects to practise what I learn in class.</p>
+
+        <ul class="stats stagger">
+          <li>
+            <span class="count" data-target="3">3</span>
+            <small>Semester</small>
+          </li>
+          <li>
+            <span class="count" data-target="8">8</span>
+            <small>Skills</small>
+          </li>
+          <li>
+            <span class="count" data-target="2">2</span>
+            <small>Projects</small>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Skills (light) -->
+    <section class="section light" id="skills">
+      <div class="container">
+        <h2 class="section-title reveal">Skills</h2>
+        <p class="section-sub reveal">The tools I use and the languages I am learning.</p>
+        <ul class="skill-grid stagger">
+          <li class="skill-tile">HTML</li>
+          <li class="skill-tile">CSS</li>
+          <li class="skill-tile">JavaScript</li>
+          <li class="skill-tile">C</li>
+          <li class="skill-tile">C++</li>
+          <li class="skill-tile">Java</li>
+          <li class="skill-tile">Python</li>
+          <li class="skill-tile">Git and GitHub</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects (dark) -->
+    <section class="section dark" id="projects">
+      <div class="container">
+        <h2 class="section-title reveal">Projects</h2>
+        <p class="section-sub reveal">Small things I have built while learning.</p>
+        <div class="project-grid stagger">
+          <article class="project-card card-blue">
+            <h3>Portfolio website</h3>
+            <p>This page, built with HTML, CSS and JavaScript. It uses Git branches for the navbar and footer.</p>
+            <a class="link" href="#contact">Ask me about it &rsaquo;</a>
+          </article>
+          <article class="project-card card-warm">
+            <h3>Your next project</h3>
+            <p>Write one line about what the project does and what you learned from it.</p>
+            <a class="link" href="#contact">Ask me about it &rsaquo;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact (light) -->
+    <section class="section light" id="contact">
+      <div class="container narrow">
+        <h2 class="section-title reveal">Get in touch</h2>
+        <p class="section-sub reveal">Send a message and I will get back to you.</p>
+        <form id="contact-form" class="contact-form reveal" novalidate>
+          <label for="name">Name</label>
+          <input id="name" type="text" autocomplete="name" required>
+
+          <label for="email">Email</label>
+          <input id="email" type="email" autocomplete="email" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" rows="4" required></textarea>
+
+          <button type="submit" class="btn btn-primary">Send message</button>
+          <p id="form-status" role="status"></p>
+        </form>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>© <span id="year"></span> Your Name. Made with HTML, CSS & JavaScript.</p>
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Copyright &copy; <span id="year"></span> Vighnesh Kalbhor. Built with HTML, CSS and JavaScript.</p>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
